@@ -6,7 +6,6 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const mainPath = path.join(__dirname, 'main.ts');
 
 module.exports = {
-  stats: 'normal',
   mode: 'production',
   devtool: 'source-map',
   performance: { hints: false, },
@@ -73,5 +72,5 @@ module.exports = {
       tsConfigPath: './tsconfig.app.json',
       skipCodeGeneration: false
     })
-  ]
+  ],
 };
