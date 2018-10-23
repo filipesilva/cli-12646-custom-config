@@ -1,0 +1,28 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "target": "es6",
+        "types": ["node", "jasmine"],
+        "baseUrl": ".",
+        "outDir": "./dist/out-tsc",
+        "noUnusedLocals": true,
+        "lib": [
+            "dom",
+            "es2015",
+            "es2017",
+            "scripthost",
+            "es2016.array.include",
+            "esnext.asynciterable"
+        ]
+    }
+}
