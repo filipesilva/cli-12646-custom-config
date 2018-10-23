@@ -1,40 +1,27 @@
 {
-    "name": "test-app",
-    "version": "0.0.0",
-    "license": "MIT",
-    "scripts": {
-        "build": "webpack --mode=production",
-        "sm": "source-map-explorer dist/js/main.bundle.js"
-    },
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "^7.0.0",
-        "@angular/cdk": "^7.0.0",
-        "@angular/common": "^7.0.0",
-        "@angular/core": "^7.0.0",
-        "@angular/forms": "^7.0.0",
-        "@angular/http": "^7.0.0",
-        "@angular/platform-browser": "^7.0.0",
-        "@angular/platform-browser-dynamic": "^7.0.0",
-        "@angular/router": "^7.0.0",
-        "core-js": "^2.4.1",
-        "rxjs": "^6.3.0",
-        "source-map-explorer": "^1.6.0",
-        "tslib": "^1.9.0",
-        "zone.js": "^0.8.26"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "^0.10.1",
-        "@angular-devkit/build-optimizer": "^0.10.1",
-        "@angular/compiler": "^7.0.0",
-        "@angular/compiler-cli": "^7.0.0",
-        "@angular/language-service": "^7.0.0",
-        "@ngtools/webpack": "^7.0.0",
-        "@types/webpack": "4.4.2",
-        "ts-node": "^4.1.0",
-        "typescript": "~3.1.1",
-        "uglifyjs-webpack-plugin": "^2.0.1",
-        "webpack": "4.19.1",
-        "webpack-cli": "^3.1.2"
-    }
+  "name": "test-app",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "sm": "source-map-explorer dist/js/main.bundle.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/core": "7.0.0",
+    "rxjs": "^6.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-optimizer": "^0.10.1",
+    "@angular/compiler": "^7.0.0",
+    "@angular/compiler-cli": "^7.0.0",
+    "@ngtools/webpack": "^7.0.0",
+    "@types/webpack": "4.4.2",
+    "source-map-explorer": "^1.6.0",
+    "typescript": "~3.1.1",
+    "terser-webpack-plugin": "1.1.0",
+    "ts-node": "^7.0.1",
+    "webpack": "4.19.1",
+    "webpack-cli": "^3.1.2"
+  }
 }
