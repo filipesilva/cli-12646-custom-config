@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --display-optimization-bailout --display-reasons --display-used-exports --verbose",
+    "build": "ts-node run-webpack.ts",
     "sm": "source-map-explorer dist/js/main.bundle.js"
   },
   "private": true,
@@ -21,7 +21,6 @@
     "typescript": "~3.1.1",
     "terser-webpack-plugin": "1.1.0",
     "ts-node": "^7.0.1",
-    "webpack": "4.19.1",
-    "webpack-cli": "^3.1.2"
+    "webpack": "4.19.1"
   }
 }

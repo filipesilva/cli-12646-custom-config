@@ -1,11 +1,23 @@
 import * as path from 'path';
 import { ProgressPlugin } from 'webpack';
+import * as webpack from 'webpack';
 import { AngularCompilerPlugin, PLATFORM } from '@ngtools/webpack';
 
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const mainPath = path.join(__dirname, 'main.ts');
 
-module.exports = {
+const config = {
+  stats: {
+    colors: true,
+    warnings: true,
+    errors: true,
+    usedExports: true,
+    maxModules: Infinity,
+    optimizationBailout: true,
+    reasons: true,
+    // hide rxjs and tslib from stats output
+    excludeModules: /\/(rxjs|tslib)\//
+  },
   mode: 'production',
   devtool: 'source-map',
   performance: { hints: false, },
@@ -77,5 +89,8 @@ module.exports = {
   //  [17] (webpack)/buildin/global.js 510 bytes {0} [depth 3] [built]
   //       ModuleConcatenation bailout: Module is not an ECMAScript module
   //       cjs require global [14] ./node_modules/@angular/core/fesm5/core.js 1:0-47
-  node: false,  
+  node: false,
 };
+
+const webpackCompiler = webpack(config as {});
+webpackCompiler.run((_err, stats) => console.log(stats.toString(config.stats)))
