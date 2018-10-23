@@ -1,6 +1,5 @@
 import * as path from 'path';
 import { ProgressPlugin } from 'webpack';
-import * as webpack from 'webpack';
 import { AngularCompilerPlugin, PLATFORM } from '@ngtools/webpack';
 
 const TerserWebpackPlugin = require('terser-webpack-plugin');
@@ -9,8 +8,8 @@ const mainPath = path.join(__dirname, 'main.ts');
 const config = {
   stats: {
     colors: true,
-    // hide rxjs and tslib from stats output
-    excludeModules: /\/(rxjs|tslib)\//,
+    // show only compiler and core in stats.
+    excludeModules: (p) => p && !p.endsWith('fesm5/compiler.js') && !p.endsWith('fesm5/core.js'),
     warnings: true,
     errors: true,
     usedExports: true,
@@ -91,5 +90,4 @@ const config = {
   node: false,
 };
 
-const webpackCompiler = webpack(config as {});
-webpackCompiler.run((_err, stats) => console.log(stats.toString(config.stats)))
+module.exports = config;

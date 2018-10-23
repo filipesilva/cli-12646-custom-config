@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "ts-node run-webpack.ts",
+    "build": "webpack",
     "sm": "source-map-explorer dist/js/main.bundle.js"
   },
   "private": true,
@@ -18,9 +18,10 @@
     "@ngtools/webpack": "^7.0.0",
     "@types/webpack": "4.4.2",
     "source-map-explorer": "^1.6.0",
-    "typescript": "~3.1.1",
     "terser-webpack-plugin": "1.1.0",
     "ts-node": "^7.0.1",
-    "webpack": "4.19.1"
+    "typescript": "~3.1.1",
+    "webpack": "4.19.1",
+    "webpack-cli": "^3.1.2"
   }
 }
