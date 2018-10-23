@@ -9,14 +9,14 @@ const mainPath = path.join(__dirname, 'main.ts');
 const config = {
   stats: {
     colors: true,
+    // hide rxjs and tslib from stats output
+    excludeModules: /\/(rxjs|tslib)\//,
     warnings: true,
     errors: true,
     usedExports: true,
     maxModules: Infinity,
     optimizationBailout: true,
     reasons: true,
-    // hide rxjs and tslib from stats output
-    excludeModules: /\/(rxjs|tslib)\//
   },
   mode: 'production',
   devtool: 'source-map',
@@ -53,22 +53,19 @@ const config = {
         cache: false,
         parallel: false,
         terserOptions: {
-          extractComments: false,
-          uglifyOptions: {
-            output: {
-              ascii_only: true,
-              comments: false,
-              webkit: true
-            },
-            ecma: 5,
-            warnings: false,
-            ie8: false,
-            mangle: true,
-            compress: {
-              typeofs: false,
-              pure_getters: true,
-              passes: 3
-            }
+          output: {
+            ascii_only: true,
+            comments: false,
+            webkit: true
+          },
+          ecma: 5,
+          warnings: false,
+          ie8: false,
+          mangle: true,
+          compress: {
+            typeofs: false,
+            pure_getters: true,
+            passes: 3
           }
         }
       })
