@@ -53,19 +53,21 @@ const config = {
         cache: false,
         parallel: false,
         terserOptions: {
+          ecma: 5,
+          warnings: false,
+          mangle: true,
+          safari10: true,
           output: {
             ascii_only: true,
             comments: false,
-            webkit: true
+            webkit: true,
           },
-          ecma: 5,
-          warnings: false,
-          ie8: false,
-          mangle: true,
           compress: {
-            typeofs: false,
             pure_getters: true,
-            passes: 3
+            passes: 3,
+            global_defs: {
+              ngDevMode: false,
+            },
           }
         }
       })
