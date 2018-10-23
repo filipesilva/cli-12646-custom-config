@@ -73,4 +73,9 @@ module.exports = {
       skipCodeGeneration: false
     })
   ],
+  // Leaving node built-ins adds the global module because of @angular/core, causing it to not be concatenated.
+  //  [17] (webpack)/buildin/global.js 510 bytes {0} [depth 3] [built]
+  //       ModuleConcatenation bailout: Module is not an ECMAScript module
+  //       cjs require global [14] ./node_modules/@angular/core/fesm5/core.js 1:0-47
+  node: false,  
 };
