@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { VERSION } from '@angular/core';
 
-console.log(enableProdMode);
+console.log(VERSION);
 

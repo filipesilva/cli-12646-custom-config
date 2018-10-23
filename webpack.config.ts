@@ -9,6 +9,7 @@ const mainPath = path.join(__dirname, 'main.ts');
 
 module.exports = {
     mode: 'production',
+    devtool: 'source-map',
     resolve: {
         extensions: ['.ts', '.js'],
         modules: [nodeModulesPath],
@@ -46,7 +47,6 @@ module.exports = {
             }
         ]
     },
-    devtool: false,
     optimization: {
         minimizer: [
             new UglifyJsPlugin({

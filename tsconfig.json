@@ -12,7 +12,7 @@
         "noImplicitThis": true,
         "strictNullChecks": true,
         "target": "es6",
-        "types": ["node", "jasmine"],
+        "types": ["node"],
         "baseUrl": ".",
         "outDir": "./dist/out-tsc",
         "noUnusedLocals": true,
